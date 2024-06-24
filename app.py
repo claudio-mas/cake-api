@@ -3,10 +3,43 @@ import requests
 # import json
 
 # Configuração da página Streamlit
-st.set_page_config(page_title="SprintHub API - Listar Oportunidades de Lead")
+st.set_page_config(page_title="Cake & Co - SprintHub API", page_icon="🎂", layout="centered", initial_sidebar_state="auto")
+
+# Esconder o menu do Streamlit
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            .viewerBadge_link__1S137 {display: none;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+st.markdown(
+  '''<style>
+    #MainMenu{visibility: hidden;} footer{visibility: hidden;}
+    #root>div:nth-child(1)>div>div>div>div>section>div{padding-top: .2rem;
+  </style>''', unsafe_allow_html=True
+)
 
 # Título da aplicação
 st.title("SprintHub API - Listar Oportunidades de Lead")
+
+# Exibir o número da versão da aplicação no canto superior esquerdo
+st.markdown(
+    """
+    <style>
+    .css-10trblm {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+    }
+    </style>
+    <div class="css-10trblm">Versão 1.0</div>
+    """,
+    unsafe_allow_html=True
+)
 
 # Instruções de uso
 st.markdown("""
@@ -20,7 +53,7 @@ st.markdown("""
 
 # Campos de entrada
 lead_id = st.text_input("ID do Lead")
-instance = st.text_input("Identificador da Instância")
+instance = st.text_input("Identificador da Instância", value="cakeco")
 api_token = st.text_input("API Token", type="password")
 bearer_token = st.text_input("Bearer Token", type="password")
 
