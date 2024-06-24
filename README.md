@@ -1,2 +1,2 @@
-# cake-api
-Acesso a API SprintHub
+# Cake & Co.
+SprintHub API
